@@ -12,7 +12,7 @@
 
 * 计算题（5个算法）
 
-  * Bresenham画线算法
+* * Bresenham画线算法
 ```cpp
 void drawpixel(int x, int y, int color) {}
 void BresenhamLine(int x0, int y0, int x1, int y1, int color) {
@@ -37,13 +37,13 @@ void BresenhamLine(int x0, int y0, int x1, int y1, int color) {
 }
 ```
 
-  * 扫描线填充
+* * 扫描线填充
 
-  * 种子填充
+* * 种子填充
 
-  * 裁剪（参数化裁剪算法）
+* * 裁剪（参数化裁剪算法）
 
-  * 二维图形变换（几个变换矩阵）
+* * 二维图形变换（几个变换矩阵）
 
 
 ## 数据分析（6月15日【周三】11:00-12:30）
