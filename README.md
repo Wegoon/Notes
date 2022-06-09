@@ -11,16 +11,39 @@
 * 判断题（第一章~最后一章，课件&&课件之外）
 
 * 计算题（5个算法）
-  
-  * Bresenham画线算法
-  
-  * 扫描线填充
-  
-  * 种子填充
 
-  * 裁剪（参数化裁剪算法）
-  
-  * 二维图形变换（几个变换矩阵）
+  * Bresenham画线算法
+```cpp
+void drawpixel(int x, int y, int color) {}
+void BresenhamLine(int x0, int y0, int x1, int y1, int color) {
+    int x, y, dx, dy;
+    float k;
+    int e;
+    dx = x1 - x0;
+    dy = y1 - y0;
+    k = dy / dx;
+    e = -dx;
+    x = x0;
+    y = y0;
+    for (int i = 0; i <= dx; i++) {
+        drawpixel(x, y, color);
+        x++;
+        e = e + 2 * dy;
+        if (e >= 0) {
+            y++;
+            e = e - 2 * dx;
+        }
+    }
+}
+```
+
+  * * 扫描线填充
+
+  * * 种子填充
+
+  * * 裁剪（参数化裁剪算法）
+
+  * * 二维图形变换（几个变换矩阵）
 
 
 ## 数据分析（6月15日【周三】11:00-12:30）
