@@ -12,7 +12,7 @@
 
 * 计算题（5个算法）
 
-* * Bresenham画线算法
+  * Bresenham画线算法
 ```cpp
 void drawpixel(int x, int y, int color) {}
 void BresenhamLine(int x0, int y0, int x1, int y1, int color) {
