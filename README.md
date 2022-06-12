@@ -53,7 +53,7 @@ void BresenhamLine(int x0, int y0, int x1, int y1, int color) {
     > 沿 x 轴平移 tx 单位，沿 y 轴平移 ty 单位。
     >
     >
-    > * 旋转变换
+    > * 旋转变换（逆时针为＋，顺时针为－）
     >
     > 绕坐标原点逆时针旋转一个角度θ：
     >
@@ -66,7 +66,13 @@ void BresenhamLine(int x0, int y0, int x1, int y1, int color) {
     >
     > * 比例变换
     >
+    > 关于原点：
+    >
     > ![1655019892042](/static/images/02.png)
+    >
+    > 不关于原点（复合运算）：
+    >
+    > 先移到原点，比例变换完之后，再移回去。
     >
     >
     > * 对称变换
@@ -85,7 +91,7 @@ void BresenhamLine(int x0, int y0, int x1, int y1, int color) {
     >
     > ![1655022860275](/static/images/07.png)
     >
-    > 对称平行于X轴的直线 y = yc：
+    > 对称平行于X轴的直线 y = yc：（复合运算）
     >
     > ![1655022936140](/static/images/08.png)
     >
