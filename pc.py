@@ -64,7 +64,7 @@ def save_data(title, txt, bk):
     # pass
     # print(bk)
     print('{0}.txt'.format(bk))
-    with open('{}.txt'.format(bk),'a+',encoding='utf-8')as f:
+    with open('{0}.txt'.format(bk),'a+',encoding='utf-8')as f:
         f.write(title + "\n" + txt + "\n\n\n\n")
 
 def run():

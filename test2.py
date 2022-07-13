@@ -1,7 +1,3 @@
-from email import header
-from email.encoders import encode_noop
-from logging import root
-import time
 import requests
 from lxml import etree
 
@@ -18,7 +14,6 @@ def get_book_url(root_url, module_name, module_url, headers):
     for tmp_address in relative_address:
         tmp_address = tmp_address.strip()
         book_url = root_url + tmp_address.split('/')[-1]
-        # print(book_url)
         get_chapter_url(root_url, module_name = module_name, book_url = book_url, headers = headers)
 
 def get_chapter_url(root_url, module_name, book_url, headers):
@@ -29,46 +24,37 @@ def get_chapter_url(root_url, module_name, book_url, headers):
     save_data_book(module_name, book_name)
     save_data_book(module_name, book_author)
     save_data_book(module_name, book_synopsis + '\n')
-    # print('book_name', type(book_name), book_name)
-    # print('book_author', type(book_author), book_author)
-    # print('book_synopsis', type(book_synopsis), book_synopsis)
     relative_address = book_content.xpath('//table//tr//a/@href')
-    # print('relative_address', relative_address)
-    for tmp_address in relative_address:
-        tmp_address = tmp_address.strip()
-        chapter_url = root_url + tmp_address.split('/')[-1]
-        get_chapter_content(module_name = module_name, chapter_url = chapter_url, headers = headers)
+    tmp_chapter_name = book_content.xpath('//table//tr//a/text()')
 
-def get_chapter_content(module_name, chapter_url, headers):
+    for i in range(len(relative_address)):
+        tmp_address = relative_address[i].strip()
+        chapter_url = root_url + tmp_address.split('/')[-1]
+        chapter_name = str(tmp_chapter_name[i]).strip()
+        get_chapter_content(module_name = module_name, chapter_url = chapter_url, chapter_name = chapter_name, headers = headers)
+    save_data_book(module_name, "\n")
+
+def get_chapter_content(module_name, chapter_url, chapter_name, headers):
     chapter_content = get_html(s_url = chapter_url, s_headers = headers)
+    save_data_book(module_name, chapter_name)
     en = chapter_content.xpath('//div[@class="line_en"]//text()')
     cn = chapter_content.xpath('//div[@class="line_cn"]/@title')
     for i in range(len(en)):
         en_paragraph = str(en[i]).strip()
         cn_paragraph = str(cn[i]).strip()
-        # print(cn_paragraph + '\t' + en_paragraph)
         save_data_cn_en(module_name, cn_paragraph, en_paragraph)
-    save_data_book(module_name, "\n\n\n")
+    save_data_book(module_name, "")
 
 # book_name, book_author, book_synopsis
 def save_data_book(module_name, book_date):
-    print(module_name)
-    print('{0}.txt'.format(module_name))
     file = open('{0}.txt'.format(module_name), 'a', encoding='utf-8')
-    # with open('{}.txt'.format(module_name), 'a+', encoding='utf-8')as f:
-    #     print(book_date)
     file.write(book_date + "\n")
     file.close()
-    # print(book_date)
 
 def save_data_cn_en(module_name, cn_paragraph, en_paragraph):
-    print('{0}.txt'.format(module_name))
     file = open('{0}.txt'.format(module_name), 'a', encoding='utf-8')
-    # with open('{}.txt'.format(module_name), 'a+', encoding='utf-8')as f:
-    #     print(cn_paragraph + '\t' + en_paragraph)
     file.write(cn_paragraph + "\t" + en_paragraph + "\n")
     file.close()
-    # print(cn_paragraph + '\t' + en_paragraph)
 
 def run():
     root_url = 'http://www.bczzz.com/book/'
@@ -76,12 +62,21 @@ def run():
     headers = {
         'Referer': 'http://www.bczzz.com/',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
-        # 'Cookie': 'Hm_lvt_308b87570281daa02f0d31c085c39163=1638931313; acw_tc=3b2fe1b816389326707231189e9ecf75af42cbef8e41511f142f8fda0b; Hm_lpvt_308b87570281daa02f0d31c085c39163=1638932671'
     }
     for ml in module_name:
         module_url = root_url + ml + '/'
-        # print(module_url)
         get_book_url(root_url, module_name = ml, module_url = module_url, headers = headers)
+        
+        print(module_url)
+        while True:
+            module_content = get_html(s_url = module_url, s_headers = headers)
+            next_page_url = module_content.xpath('//a[@class="next"]/@href')
+            if not next_page_url:
+                break
+            next_page_url = 'http://www.bczzz.com/' + next_page_url[0].strip()
+            module_url = next_page_url
+            get_book_url(root_url, module_name = ml, module_url = module_url, headers = headers)
+            print(module_url)
 
 if __name__ == '__main__':
     run()
