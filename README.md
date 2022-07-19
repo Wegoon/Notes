@@ -97,9 +97,9 @@
 
 清洗前数据：`ja.deduped.out`：`152G`
 
-保留数据：`ja.deduped.out.out`：``
+保留数据：`ja.deduped.out.out`：`151G`
 
-丢弃数据：`ja.deduped.out.out.discard`：``
+丢弃数据：`ja.deduped.out.out.discard`：`1.5G`
 
 ***注***：清洗后数据所在位置为 `/mnt/server142/weigf/clean_data_3`
 
@@ -116,7 +116,7 @@
 
 
 
-## 计划第四次清洗
+## 计划第四次清洗（还未开始）
 
 #### 清洗对象：
 
@@ -124,7 +124,7 @@
 
 #### 清洗结果：
 
-清洗前数据：`ja.deduped.out.out`：``
+清洗前数据：`ja.deduped.out.out`：`151G`
 
 保留数据：`ja.deduped.out.out.out`：``
 
@@ -134,5 +134,5 @@
 
 #### 洗掉的数据特征：
 
-* 以 `,` 或 `，` 结尾的行
+* 以 `,` 或  `，` 或 `:` 或 `：` 结尾的行
 
