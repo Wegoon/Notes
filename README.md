@@ -2,6 +2,35 @@
 
 `tools.h` ： `82行` 全局变量何解？
 
+```cpp
+static void split_1(const wstring& str, vector<wstring>& tokens, wstring delimiter = L" ")
+{
+    wstring ss = str;
+    tokens.clear();
+    while(ss.find_first_of(delimiter) != wstring::npos)
+    {
+        int beg = ss.find_first_of(delimiter);
+        int len = delimiter.length();
+        wstring subss = ss.substr(0,beg);
+        if(subss.length() > 0 )
+        {
+            tokens.push_back(subss);
+            if(beg+len < ss.length()){ss = ss.substr(beg+len);}
+            else{ss= L"";break;}
+        }
+        else
+        {
+            if(beg+len < ss.length()){ss = ss.substr(beg+len);}
+            else{ss= L"";break;}
+        }
+    }
+    if(tokens.size() > 0 && ss != L"")
+    {
+        tokens.push_back(ss);
+    }
+}
+```
+
 
 
 
