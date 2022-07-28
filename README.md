@@ -41,9 +41,23 @@ static void split_1(const wstring& str, vector<wstring>& tokens, wstring delimit
 
 
 
+### 爬虫
+
+```
+https://www.b2bers.com/big5/language/spokenen/spokenen.html
+與老外溝通的40招		已完成
+https://www.poemlife.com/forum.php?mod=viewthread&tid=989053&extra=page%3D1&page=1
+https://enclub.com/
+https://chinese.despertandome.com/
+```
 
 
 
+```
+https://www.dedyy.com/swyy/
+http://kan.iask.sina.com.cn/area/North-America.html
+https://china.legalbusinessonline.com/news-list	
+```
 
 
 
