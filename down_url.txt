@@ -100,6 +100,7 @@ https://ir.ehousechina.com/cn/financial-reports/
 http://www.cnncintl.com/new-site/financial_reports.php?lang=cht
 
 
+
 ==== dis ====
 www.zhengye-cn.com
 www.scudcn.com
@@ -107,6 +108,8 @@ www.cnipa.gov.cn
 www.chinafoodsltd.com
 ir.dafaland.com
 ir.dafaland.com
+www.caam.org.cn  
+www.tianlungas.com
 
 
 
@@ -159,6 +162,19 @@ https://www.yff.com/cn/reports/
 http://www.stelux.com/eng/ir/ar.php
 https://www.citic.com/cn/investor_relation/financial_reports/
 https://www.citic.com/en/investor_relation/financial_reports/
+
+
+=== dis ===
+545c.com              
+www.chinabaolitech.com  
+www.stelux.com
+corp.bossini.com      
+www.comba.com.cn        
+www.tsingtao.com.cn
+ir.anta.com           
+www.gf-holdings.com
+www.capitalfp.com.hk  
+www.haidilao.com
 
 
 ==== 4 ====
@@ -271,6 +287,16 @@ http://www.carrianna.com/c/ir_report.php
 https://n-www.thkma.org/publication/annual_financial_report/
 https://n-www.thkma.org/publication/annual_financial_report/upload/report/2/self/624f9faec6f80.pdf
 http://jinmao88.com/sc/investor_report.php?year=2014
+
+
+=== dis ===
+web.ppig.com.hk               
+www.townhealth.com
+www.chinainvestment.com.hk    
+www.wecon.com.hk
+www.china-oriented.com        
+www.zzcapitalinternational.com
+www.iconspace.com
 
 
 ==== 6 ====
