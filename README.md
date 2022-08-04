@@ -1,5 +1,7 @@
 #### 疑问
 
+变量 `m / mp` 前缀一般代表什么含义？
+
 `readfile.h` 中 `CReadFile` 类，`read()` 方法中的 `while` 循环判断结尾不是 `\n` 是何意？
 
 `tools.h` ： `82行` 全局变量何解？
