@@ -28,7 +28,18 @@ def mainprocess(url):
     response = requests.get(url, headers=headers)
     # print(response.text)
     tree = etree.HTML(response.text)
-    content = tree.xpath('//div[@class="entry-body-text"]//text()')
+    tmp_content = tree.xpath('//div[@class="entry-body-text"]//div')
+    # print(tmp_content)
+    content = list()
+    for tmp in tmp_content:
+        this = tmp.xpath('.//text()')
+        # print(this)
+        yuan = ''
+        for line in this:
+            line = line.strip()
+            yuan += line
+        content.append(yuan)
+
     zh = ''
     ja = ''
     for line in content:
@@ -39,14 +50,15 @@ def mainprocess(url):
             ja += line + '\n'
         elif re.search('[\u4e00-\u9fa5]', line):
             zh += line + '\n'
+    print(zh, ja)
     if ja and zh:
         ja += '==========\n'
         zh += '==========\n'
         lock = threading.Lock()
         with lock:
-            with open(r'D:\aDesktop\pctest\yes.zh', 'a', encoding='utf-8') as fw:
+            with open(r'C:\Users\my\Desktop\my\depository\Notes\pctest\pctest\no.zh', 'a', encoding='utf-8') as fw:
                 fw.write(zh)
-            with open(r'D:\aDesktop\pctest\yes.ja', 'a', encoding='utf-8') as fw:
+            with open(r'C:\Users\my\Desktop\my\depository\Notes\pctest\pctest\no.ja', 'a', encoding='utf-8') as fw:
                 fw.write(ja)
 
 with concurrent.futures.ThreadPoolExecutor() as pool:
