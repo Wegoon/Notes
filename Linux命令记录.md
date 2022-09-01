@@ -1,0 +1,1 @@
+将本地内容写入到远程服务器中：`cat id_rsa.pub | ssh niu1 'cat - >> ~/.ssh/authorized_keys'`

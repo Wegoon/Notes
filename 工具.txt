@@ -10,7 +10,7 @@ BleuAlignScript
 DelDupTornadoClient	
 名字：去重工具
 功能：双语数据去重服务（与已有数据库去重，不包含自身去重）
-启动：nohup python3 -u delDupScript.py -i inpath/ -o outpath/ -l zh2en -m False -p 10 > nohup.out 2>&1 &
+启动：nohup python3 -u delDupScript.py -i inpath/ -o outpath/ -l zh2en -m False -p 10 > nohup.log 2>&1 &
 
 
 sort -o  -u | uniq
@@ -32,5 +32,8 @@ DataProcessTool
 启动：nohup python3 -u mainScript.py -i inpath/ -sp script/ -l zh2en -m custom -p 5 > nohup.out 2>&1 &
 
 nohup python3 -u mainScript.py -i /home/weigf/data/clean_inpath/ -o /home/weigf/data/clean_outpath/ -sp script/ -l zh2en -m custom -p 5 > nohup.out 2>&1 &
+
+nohup python3 -u mainScript.py -i inpath/ -o outpath/ -sp script/script_public/ -l zh2en -m custom -p 5 > nohup.log 2>&1 &
+
 
 参数及使用：详见README
