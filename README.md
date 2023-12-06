@@ -1,3 +1,47 @@
+#### LaTeX学习手册：
+[HTML版](./LaTeX手册/lshort-zh-cn.html)
+[PDF版](./LaTeX手册/pdf.html)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## pip
 
 `pip` 下载加速：`-i` + 以下链接
