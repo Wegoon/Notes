@@ -1,5 +1,6 @@
-#### LaTeX学习手册：
+### LaTeX学习手册：
 [HTML版](./LaTeX手册/lshort-zh-cn.html)
+
 [PDF版](./LaTeX手册/pdf.html)
 
 
