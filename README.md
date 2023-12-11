@@ -1,4 +1,21 @@
+### 目录
+
+[信息检索与论文写作](./信息检索与论文写作)
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## LaTeX学习手册：
+
 [HTML版](./LaTeX手册/lshort-zh-cn.html)
 
 [PDF版](./LaTeX手册/lshort-zh-cn.pdf)
